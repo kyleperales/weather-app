@@ -1,28 +1,30 @@
-@if(weathers.length === 0) {
-  <h1>{{ 'weather.weather-details.city-unkown' | translate: {city} }}</h1>
-} @else {
-  <table class="table">
-    <thead>
-      <tr>
-        <th>{{ 'weather.weather-details.table-header.city' | translate }}</th>
-        <th>{{ 'weather.weather-details.table-header.temperature' | translate }}</th>
-        <th>{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
-        <th>{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (weather of weathers; track weather.id) {
-        <tr *ngFor="let weather of weathers">
-          <td>{{ weather.name }}</td>
-          <td>{{ weather.main.temp }}</td>
-          <td>{{ weather.main.humidity }}</td>
-          <td>{{ weather.wind.speed }}</td>
+<div class="container h-100">
+  @if(weathers.length === 0) {
+    <h1>{{ 'weather.weather-details.city-unkown' | translate: {city} }}</h1>
+  } @else {
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th>{{ 'weather.weather-details.table-header.city' | translate }}</th>
+          <th>{{ 'weather.weather-details.table-header.temperature' | translate }}</th>
+          <th>{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
+          <th>{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
         </tr>
-      }
-    </tbody>
-  </table>
-}
-
-<button>
-  <a routerLink="/weather">{{ 'weather.weather-details.back-button.text' | translate }}</a>
-</button>
+      </thead>
+      <tbody>
+        @for (weather of weathers; track weather.id) {
+          <tr *ngFor="let weather of weathers">
+            <td>{{ weather.name }}</td>
+            <td>{{ weather.main.temp }}</td>
+            <td>{{ weather.main.humidity }}</td>
+            <td>{{ weather.wind.speed }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+  
+  <button class="btn btn-primary" (click)="backToSearch()">
+    {{ 'weather.weather-details.back-button.text' | translate }}
+  </button>
+</div>

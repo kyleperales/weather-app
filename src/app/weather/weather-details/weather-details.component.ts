@@ -37,4 +37,8 @@ export class WeatherDetailsComponent implements OnInit {
         } );
     }
   }
+
+  backToSearch() {  
+    window.history.back();
+  }
 }

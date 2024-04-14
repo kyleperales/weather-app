@@ -13,5 +13,5 @@ export const LANG_EN = {
   'weather.weather-details.table-header.temperature': 'Temperature',
   'weather.weather-details.table-header.humidity': 'Humidity',
   'weather.weather-details.table-header.wind-speed': 'Wind Speed',
-  'weather.weather-details.back-button.text': 'Back to Search',
+  'weather.weather-details.back-button.text': 'Search Another',
 }

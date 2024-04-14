@@ -1,0 +1,11 @@
+@import '../../../assets/styles/mixins.scss';
+
+table tr td, table tr th {
+    @include glass-background;
+    border-radius: 0px;
+    border: 0px;
+}
+
+.table {
+    margin-top: 10rem;
+}
