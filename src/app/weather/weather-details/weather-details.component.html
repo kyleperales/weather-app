@@ -1,4 +1,28 @@
-<p>weather-details works!</p>
+@if(weathers.length === 0) {
+  <h1> {{ city }} not found.</h1>
+} @else {
+  <table class="table">
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>Temperature</th>
+        <th>Humidity</th>
+        <th>Wind</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (weather of weathers; track weather.id) {
+        <tr *ngFor="let weather of weathers">
+          <td>{{ weather.name }}</td>
+          <td>{{ weather.main.temp }}</td>
+          <td>{{ weather.main.humidity }}</td>
+          <td>{{ weather.wind.speed }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+
 <button>
-    <a routerLink="/weather">Back</a>
+  <a routerLink="/weather">Back</a>
 </button>
