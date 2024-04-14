@@ -1,0 +1,15 @@
+@if (hasError) {
+    <p>Something went wrong.</p>
+} @else {
+    @if(isAuthenticated$ | async) {
+        <p>Authenticated</p>
+        <button (click)="logout()">
+            Logout
+        </button>
+    } @else {
+        <p>Welcome! Please login with your GitHub account to searh for city weathers</p>
+        <button (click)="login()">
+            Login
+        </button>
+    }
+}
