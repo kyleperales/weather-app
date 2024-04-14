@@ -1,3 +1,14 @@
+@if(userDetails) {
+  <div>
+    <h1>Hi {{
+      userDetails.name
+        ? userDetails.name
+        : userDetails.nickname
+    }}</h1>
+    <a [href]="gitHubLink" target="_blank">{{gitHubLink}}</a>
+  </div>
+}
+
 <form>
   <div class="form-group">
       <label for="city">City</label>
