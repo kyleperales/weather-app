@@ -31,7 +31,7 @@ export class WeatherDetailsComponent implements OnInit {
 
   getCityWeather(city: string) {
     if (city) {
-      this.weatherDetailsService.getCityWeather(city)      
+      this.weatherDetailsService.getCityWeather(city)
         .subscribe((data) => {
           this.hasError = false
           this.weathers = [data];
