@@ -6,6 +6,5 @@
   },
   "apiUri": "http://localhost:3001",
   "appUri": "http://localhost:4200",
-  "errorPath": "/error",
-  "openWeatherApiKey": "7b00d8bc6cb074f7a66c5babf2249343"
+  "errorPath": "/error"
 }

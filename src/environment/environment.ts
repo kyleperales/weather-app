@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 import config from '../../auth_config.json';
 
-const { domain, clientId, authorizationParams: { audience }, apiUri, errorPath, openWeatherApiKey } = config as {
+const { domain, clientId, authorizationParams: { audience }, apiUri, errorPath } = config as {
   domain: string;
   clientId: string;
   authorizationParams: {
@@ -11,7 +11,6 @@ const { domain, clientId, authorizationParams: { audience }, apiUri, errorPath, 
   },
   apiUri: string;
   errorPath: string;
-  openWeatherApiKey: string;
 };
 
 export const environment = {
@@ -28,7 +27,8 @@ export const environment = {
   httpInterceptor: {
     allowedList: [`${apiUri}/*`],
   },
-  apiKey: openWeatherApiKey
+  apiKey: '7b00d8bc6cb074f7a66c5babf2249343', // OpenWeatherMap API key for weather data
+  gitHubLink: 'https://github.com/'
 };
 
 /*
