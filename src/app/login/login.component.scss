@@ -4,7 +4,9 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: $light-blue;
+
+	background: rgb(82,159,235);
+	background: radial-gradient(circle, rgba(82,159,235,1) 0%, rgba(162,225,255,1) 25%, rgba(72,196,218,1) 100%);
 
   img {
     max-width: 180px;
