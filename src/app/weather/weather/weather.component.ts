@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService, User } from '@auth0/auth0-angular';
 import { environment as env } from '../../../environment/environment';
+import { TranslatePipe } from '../../shared/translate/translate.pipe';
 
 @Component({
   selector: 'app-weather',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, TranslatePipe],
   providers: [AuthService],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.scss'
@@ -23,6 +24,17 @@ export class WeatherComponent implements OnInit {
   city = '';
   userDetails: User | null = null;
   gitHubLink = ''
+
+  get name() {
+    if (this.userDetails) {
+      return this.userDetails.name
+        ? this.userDetails.name
+        : this.userDetails.nickname    
+    } else {
+      return ''
+    }
+  }
+
   ngOnInit(): void {
     this.authService.user$.subscribe((user) => {
       if (user) {

@@ -1,19 +1,17 @@
 @if(userDetails) {
   <div>
-    <h1>Hi {{
-      userDetails.name
-        ? userDetails.name
-        : userDetails.nickname
-    }}</h1>
+    <h1>{{ 'weather.greeting' | translate:{ name } }}</h1>
     <a [href]="gitHubLink" target="_blank">{{gitHubLink}}</a>
   </div>
 }
 
 <form>
   <div class="form-group">
-      <label for="city">City</label>
+      <label for="city">{{ 'weather.city-input.label' | translate }}</label>
       <input type="text" class="form-control" id="city" name="city" [(ngModel)]="city">
   </div>
-  <button type="submit" class="btn btn-primary" (click)="getWeather()">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="getWeather()">
+      {{ 'weather.get-weather-button.text' | translate }}
+  </button>
 </form>
 

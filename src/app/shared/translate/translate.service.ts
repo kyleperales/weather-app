@@ -11,8 +11,24 @@ export class TranslateService implements ITranslateService {
 
   stringTable: IStringTable
 
-  public translate(key: string, defaultText?: string): string {
-    return this.stringTable[key] ?? defaultText;
+  public translate(key: string, defaultText: string, params?: { [key: string]: any }): string
+  public translate(key: string, params?: { [key: string]: any }): string   
+  public translate(key: string, paramsOrDefaultText?: string | { [key: string]: any }, defaultTextParams?: { [key: string]: any }): string {
+    const defaultText = typeof paramsOrDefaultText === 'string' ? paramsOrDefaultText : '';
+    const params = typeof paramsOrDefaultText === 'object' ? paramsOrDefaultText : defaultTextParams;
+    let template = this.stringTable[key];
+
+    if (!template) {
+      return defaultText;
+    }
+
+    if (params) {
+      for (const key in params) {
+        template = template.replace(`{${key}}`, params[key]);
+      }
+    }
+
+    return template;
   }
 
   private selectStringTable(locale: string): IStringTable {
