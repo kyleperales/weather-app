@@ -1,0 +1,9 @@
+@import './../../assets/styles/variables.scss';
+
+.navbar {
+  background-color: $dark-blue !important;
+
+  img {
+    width: 40px;
+  }
+}
