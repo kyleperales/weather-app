@@ -1,13 +1,13 @@
 @if(weathers.length === 0) {
-  <h1> {{ city }} not found.</h1>
+  <h1>{{ 'weather.weather-details.city-unkown' | translate: {city} }}</h1>
 } @else {
   <table class="table">
     <thead>
       <tr>
-        <th>City</th>
-        <th>Temperature</th>
-        <th>Humidity</th>
-        <th>Wind</th>
+        <th>{{ 'weather.weather-details.table-header.city' | translate }}</th>
+        <th>{{ 'weather.weather-details.table-header.temperature' | translate }}</th>
+        <th>{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
+        <th>{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
       </tr>
     </thead>
     <tbody>

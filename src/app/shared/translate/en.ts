@@ -7,4 +7,9 @@ export const LANG_EN = {
   'weather.city-input.label': 'City',
   'weather.get-weather-button.text': 'Get Weather',
   'weather.greeting': 'Hello, {name}!',
+  'weather.weather-details.city-unkown': '{city} City not found.',
+  'weather.weather-details.table-header.city': 'City',
+  'weather.weather-details.table-header.temperature': 'Temperature',
+  'weather.weather-details.table-header.humidity': 'Humidity',
+  'weather.weather-details.table-header.wind-speed': 'Wind Speed',
 }
