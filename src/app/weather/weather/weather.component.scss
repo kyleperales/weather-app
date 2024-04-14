@@ -1,0 +1,30 @@
+@import '../../../assets/styles/variables.scss';
+
+.greeting {
+	margin-top: 5rem;
+	.greeting-text {
+		font-size: 1.5em;
+		font-weight: bold;	
+	}
+}
+
+.city-search {
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10rem;
+	.form-group {
+		
+		.city-search-input {
+			width: 100%;
+			border-radius: 10px;
+			border-color: $white;
+			font-size: 1.5em;
+		}
+	}
+
+	.get-weather {
+		display: flex;
+		margin-top: 10px;
+		justify-content: flex-end;
+	}
+}

@@ -1,17 +1,29 @@
-@if(userDetails) {
-  <div>
-    <h1>{{ 'weather.greeting' | translate:{ name } }}</h1>
-    <a [href]="gitHubLink" target="_blank">{{ gitHubLink }}</a>
+<div class="weather-container container h-100">
+  <div class="d-flex flex-column">
+    @if(userDetails) {
+      <div class="greeting d-flex container row">
+        <div class="greeting-text flex-row">
+          <h2>{{ 'weather.greeting' | translate:{ name } }}</h2>
+        </div>
+        <div class="flex-row">
+          <a [href]="gitHubLink" target="_blank">{{ gitHubLink }}</a>
+        </div>
+      </div>
+    }
+    
+    <div class="city-search d-flex">
+      <form>
+        <div class="form-group">
+            <label for="city">{{ 'weather.city-input.label' | translate }}</label>
+            <input type="text" class="form-control city-search-input" id="city" name="city" [(ngModel)]="city">
+        </div>
+        <div class="get-weather">
+          <button type="submit" class="btn btn-primary" (click)="getWeather()">
+              {{ 'weather.get-weather-button.text' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-}
-
-<form>
-  <div class="form-group">
-      <label for="city">{{ 'weather.city-input.label' | translate }}</label>
-      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="city">
-  </div>
-  <button type="submit" class="btn btn-primary" (click)="getWeather()">
-      {{ 'weather.get-weather-button.text' | translate }}
-  </button>
-</form>
-
+  
+</div>
