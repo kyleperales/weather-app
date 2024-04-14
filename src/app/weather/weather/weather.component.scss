@@ -1,11 +1,21 @@
 @import '../../../assets/styles/variables.scss';
 
 .greeting {
+	text-align: center;
+	justify-content: center;
 	margin-top: 5rem;
+	padding: 35px 20px;
 	.greeting-text {
 		font-size: 1.5em;
-		font-weight: bold;	
+		font-weight: bold;
 	}
+
+	background: rgba(255, 255, 255, 0.16);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(0px);
+	-webkit-backdrop-filter: blur(0px);
+	border: 1px solid rgba(255, 255, 255, 0.21);
 }
 
 .city-search {
