@@ -12,11 +12,11 @@
             <tr>
               <th>{{ 'weather.weather-details.table-header.date' | translate }}</th>
               <th>{{ 'weather.weather-details.table-header.temperature' | translate }}</th>
-              <th>{{ 'weather.weather-details.table-header.feels-like' | translate }}</th>
-              <th>{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
-              <th>{{ 'weather.weather-details.table-header.description' | translate }}</th>
-              <th>{{ 'weather.weather-details.table-header.main' | translate }}</th>
-              <th>{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
+              <th class="d-none d-sm-table-cell">{{ 'weather.weather-details.table-header.feels-like' | translate }}</th>
+              <th class="d-none d-sm-table-cell">{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
+              <th class="d-none d-sm-table-cell">{{ 'weather.weather-details.table-header.description' | translate }}</th>
+              <th class="d-none d-sm-table-cell">{{ 'weather.weather-details.table-header.main' | translate }}</th>
+              <th class="d-none d-sm-table-cell">{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
             </tr>
           </thead>
           <tbody>
@@ -24,11 +24,11 @@
               <tr *ngFor="let weather of weathers">
                 <td>{{ weather.date }}</td>
                 <td>{{ weather.temp }}</td>
-                <td>{{ weather.feelsLike }}</td>
-                <td>{{ weather.humidity }}</td>
-                <td>{{ weather.description }}</td>
-                <td>{{ weather.main }}</td>
-                <td>{{ weather.windSpeed }}</td>
+                <td class="d-none d-sm-table-cell">{{ weather.feelsLike }}</td>
+                <td class="d-none d-sm-table-cell">{{ weather.humidity }}</td>
+                <td class="d-none d-sm-table-cell">{{ weather.description }}</td>
+                <td class="d-none d-sm-table-cell">{{ weather.main }}</td>
+                <td class="d-none d-sm-table-cell">{{ weather.windSpeed }}</td>
               </tr>
             }
           </tbody>
