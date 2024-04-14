@@ -1,27 +1,40 @@
 <div class="container h-100">
-  @if(weathers.length === 0) {
-    <h1>{{ 'weather.weather-details.city-unkown' | translate: {city} }}</h1>
+  @if (hasError) {
+    <h1>{{ 'weather.weather-details.error-message' | translate }}</h1>
   } @else {
-    <table class="table table-borderless">
-      <thead>
-        <tr>
-          <th>{{ 'weather.weather-details.table-header.city' | translate }}</th>
-          <th>{{ 'weather.weather-details.table-header.temperature' | translate }}</th>
-          <th>{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
-          <th>{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (weather of weathers; track weather.id) {
-          <tr *ngFor="let weather of weathers">
-            <td>{{ weather.name }}</td>
-            <td>{{ weather.main.temp }}</td>
-            <td>{{ weather.main.humidity }}</td>
-            <td>{{ weather.wind.speed }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
+    @if(weathers.length === 0) {
+      <h1>{{ 'weather.weather-details.city-unkown' | translate: {city} }}</h1>
+    } @else {
+      <div class="weather-details">
+        <h1>{{ weathers[0].name }}</h1>
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th>{{ 'weather.weather-details.table-header.date' | translate }}</th>
+              <th>{{ 'weather.weather-details.table-header.temperature' | translate }}</th>
+              <th>{{ 'weather.weather-details.table-header.feels-like' | translate }}</th>
+              <th>{{ 'weather.weather-details.table-header.humidity' | translate }}</th>
+              <th>{{ 'weather.weather-details.table-header.description' | translate }}</th>
+              <th>{{ 'weather.weather-details.table-header.main' | translate }}</th>
+              <th>{{ 'weather.weather-details.table-header.wind-speed' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (weather of weathers; track weather.id) {
+              <tr *ngFor="let weather of weathers">
+                <td>{{ weather.date }}</td>
+                <td>{{ weather.temp }}</td>
+                <td>{{ weather.feelsLike }}</td>
+                <td>{{ weather.humidity }}</td>
+                <td>{{ weather.description }}</td>
+                <td>{{ weather.main }}</td>
+                <td>{{ weather.windSpeed }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
   }
   
   <button class="btn btn-primary" (click)="backToSearch()">

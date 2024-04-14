@@ -22,6 +22,7 @@ export class WeatherDetailsComponent implements OnInit {
 
   weathers: any[] = []
   city: string = '';
+  hasError: boolean = false;
 
   ngOnInit() {
     this.city = this.route.snapshot.paramMap.get('city') ?? '';
@@ -30,11 +31,15 @@ export class WeatherDetailsComponent implements OnInit {
 
   getCityWeather(city: string) {
     if (city) {
-      this.weatherDetailsService.getCityWeather(city)
+      this.weatherDetailsService.getCityWeather(city)      
         .subscribe((data) => {
+          this.hasError = false
           this.weathers = [data];
-          console.log(data);
-        } );
+        }, err => {
+          this.weathers = []
+          this.hasError = true
+          console.error(err);
+        });
     }
   }
 
