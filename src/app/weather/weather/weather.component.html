@@ -1,1 +1,8 @@
-<p>weather works!</p>
+<form>
+  <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="city">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="getWeather()">Submit</button>
+</form>
+
