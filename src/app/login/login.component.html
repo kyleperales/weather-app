@@ -1,15 +1,37 @@
-@if (hasError) {
-  <p> {{ 'general.error-message' | translate }} </p>
-} @else {
-  @if(isAuthenticated$ | async) {
-    <p>{{ 'please-wait' | translate }}</p>
-    <button (click)="logout()">
-        {{ 'login.logout-button.text' | translate }}
-    </button>
+<div class="d-flex container login">
+  <div class="d-flex h-100 align-items-center">
+  @if (hasError) {
+    <p> {{ 'general.error-message' | translate }} </p>
   } @else {
-    <p>{{ 'login.welcome-message' | translate }}</p>
-    <button (click)="login()">
-        {{ 'login.login-button.text' | translate }}
-    </button>
+    @if(isAuthenticated$ | async) {
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-center">
+          <img class="img-thumbnail" src="./../../assets/icons/cloudy.png">
+        </div>
+        <div class="d-flex flex-row justify-content-center">          
+          <p>{{ 'login.app-name' | translate }}</p>
+        </div>
+        <div class="d-flex flex-row justify-content-center">       
+          <button type="button" class="btn btn-danger" (click)="logout()">
+            {{ 'login.logout-button.text' | translate }}
+          </button>
+        </div>
+      </div>
+    } @else {
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-center">
+          <img class="img-thumbnail" src="./../../assets/icons/cloudy.png">
+        </div>
+        <div class="d-flex flex-row justify-content-center">          
+          <p>{{ 'login.app-name' | translate }}</p>
+        </div>
+        <div class="d-flex flex-row justify-content-center">       
+          <button type="button" class="btn btn-warning" (click)="login()">
+              {{ 'login.login-button.text' | translate }}
+          </button>
+        </div>
+      </div>
+    }
   }
-}
+  </div>
+</div>
