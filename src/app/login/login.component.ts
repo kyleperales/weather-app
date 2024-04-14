@@ -2,13 +2,15 @@ import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
+import { TranslatePipe } from '../shared/translate/translate.pipe';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     NgIf,
-    AsyncPipe
+    AsyncPipe,
+    TranslatePipe
   ],
   providers: [AuthService],
   templateUrl: './login.component.html',

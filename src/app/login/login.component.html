@@ -1,15 +1,15 @@
 @if (hasError) {
-    <p>Something went wrong.</p>
+  <p> {{ 'general.error-message' | translate }} </p>
 } @else {
-    @if(isAuthenticated$ | async) {
-        <p>Authenticated</p>
-        <button (click)="logout()">
-            Logout
-        </button>
-    } @else {
-        <p>Welcome! Please login with your GitHub account to searh for city weathers</p>
-        <button (click)="login()">
-            Login
-        </button>
-    }
+  @if(isAuthenticated$ | async) {
+    <p>{{ 'please-wait' | translate }}</p>
+    <button (click)="logout()">
+        {{ 'login.logout-button.text' | translate }}
+    </button>
+  } @else {
+    <p>{{ 'login.welcome-message' | translate }}</p>
+    <button (click)="login()">
+        {{ 'login.login-button.text' | translate }}
+    </button>
+  }
 }
