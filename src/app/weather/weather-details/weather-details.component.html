@@ -36,8 +36,11 @@
       </div>
     }
   }
+
+  <div class="search-another">
+    <button class="btn btn-primary" (click)="backToSearch()">
+      {{ 'weather.weather-details.back-button.text' | translate }}
+    </button>
+  </div>
   
-  <button class="btn btn-primary" (click)="backToSearch()">
-    {{ 'weather.weather-details.back-button.text' | translate }}
-  </button>
 </div>

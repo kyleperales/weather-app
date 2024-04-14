@@ -1,11 +1,17 @@
 @import '../../../assets/styles/mixins.scss';
 
 table tr td, table tr th {
-    @include glass-background;
-    border-radius: 0px;
-    border: 0px;
+  @include glass-background;
+  border-radius: 0px;
+  border: 0px;
 }
 
 .weather-details {    
-    margin-top: 10rem;
+  margin-top: 10rem;
+}
+
+.search-another {    
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-end;
 }
